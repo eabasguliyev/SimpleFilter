@@ -1,14 +1,12 @@
 <?php
    require_once "./sharedData.php";
+   require_once "./functions.php";
 
-   if($_SERVER['REQUEST_METHOD'] === "GET")
-    {
-        header('Location: ../index.php');
-        exit;   
-    }
-    $makeName = $_POST['make'];
+   redirectToIndex();
+    
+   $makeName = $_POST['make'];
 
-   echo "<option selected disabled>Select Model</option>";
+   echo "<option selected disabled value='none'>Select Model</option>";
 
    $models = $filters[$makeName];
 
